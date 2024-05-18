@@ -1,0 +1,200 @@
+:root {
+  --figure-height: calc(1000px / 2);
+  --figure-width: calc(507px / 2);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-color: #efede2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+figure {
+  margin: 0;
+  height: var(--figure-height);
+  width: var(--figure-width);
+  display: flex;
+  box-shadow: 0 0 2px 3px #371c07, 0 0px 3px 7px #4b431b, 0 0px 3px 8px #754e15, 0 0 3px 11px #6d4f1a, 0 0 0 14px #512311, 2px 2px 96px 15px rgb(0 0 0 / 56%);
+  position: relative;
+}
+
+figure:before {
+  content: '';
+  height: 135px;
+  width: 135px;
+  position: absolute;
+  top: -82px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: rotate(45deg) skew(12deg, 12deg);
+  border-left: 1px solid #515151;
+  border-top: 1px solid #515151;
+  border-radius: 8px 0 0 0;
+}
+
+figure:after {
+  content: '';
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #757575;
+  position: absolute;
+  top: -128px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+figure img {
+  position: absolute;
+  height: var(--figure-height);
+  width: var(--figure-width);
+}
+
+figure .summer {
+  animation: summerRotate 20.5s linear infinite;
+}
+
+@keyframes summerRotate {
+  0% {
+    opacity: 0;
+    z-index: 1;
+  }
+  20% {
+    z-index: 1;
+    opacity: 1;
+  } 100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+figure .fall {
+  animation: fallRotate 20.5s linear infinite;
+}
+
+@keyframes fallRotate {
+  0%, 19.999999% {
+    opacity: 1;
+    z-index: 0;   
+  } 20% {
+    opacity: 0;
+    z-index: 1;
+  }
+  40% {
+    opacity: 1;
+    z-index: 1; 
+  } 100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+figure .winter {
+  animation: winterRotate 20.5s linear infinite;
+}
+
+@keyframes winterRotate {
+  0%, 39.999999% {
+    opacity: 1;
+    z-index: 0;   
+  } 40% {
+    opacity: 0;
+    z-index: 1;
+  }
+  60% {
+    opacity: 1;
+    z-index: 1; 
+  } 100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+figure .spring {
+  animation: springRotate 20.5s linear infinite;
+}
+
+@keyframes springRotate {
+  0%, 59.999999% {
+    opacity: 1;
+    z-index: 0;   
+  } 60% {
+    opacity: 0;
+    z-index: 1;
+  }
+  80% {
+    opacity: 1;
+    z-index: 1; 
+  } 100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+.seasons {
+  background-color: #dddddd;
+  height: 320px;
+  width: 380px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.seasons div {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  filter: saturate(0);
+}
+
+.seasons .summer {
+  animation: rotateSeasonBlocks 20.5s linear infinite;
+  background-color: rgb(255 114 94 / 40%);
+  top: 0;
+  left: 0;
+}
+
+.seasons .fall {
+  animation: rotateSeasonBlocks 20.5s 4.1s linear infinite;
+  background-color: rgb(255 204 94 / 40%);
+  top: 0;
+  right: 0;
+}
+
+.seasons .winter {
+  animation: rotateSeasonBlocks 20.5s 8.2s linear infinite;
+  background-color: rgb(94 205 255 / 40%);
+  bottom: 0;
+  right: 0;
+}
+
+.seasons .spring {
+  animation: rotateSeasonBlocks 20.5s 12.3s linear infinite;
+  background-color: rgb(113 255 94 / 40%);
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes rotateSeasonBlocks {
+  14%, 28% {
+    filter: saturate(1);
+  } 42% {
+    filter: saturate(0);
+  }
+}
